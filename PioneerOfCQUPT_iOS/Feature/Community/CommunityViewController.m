@@ -47,8 +47,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self getData1];
-    //    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Community" bundle:nil];
-//    UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"ViewController"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,7 +91,6 @@
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     DetailViewController *vc = [[DetailViewController alloc]init];
-//                    vc.view.backgroundColor = [UIColor whiteColor];
                     vc.detailTitle = [self.detailData objectForKey:@"title"];
                     vc.detailContent = [self.detailData objectForKey:@"content"];
                     [self.navigationController pushViewController:vc animated:YES];
@@ -101,6 +98,12 @@
             }];
             [task resume];
         });
+    }
+    else{
+        DetailViewController *vc = [[DetailViewController alloc]init];
+        vc.detailTitle = [self.detailData objectForKey:@"title"];
+        vc.detailContent = [self.detailData objectForKey:@"content"];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 /*
