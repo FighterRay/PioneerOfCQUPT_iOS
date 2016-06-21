@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getData];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"banner"] forBarMetrics:UIBarMetricsDefault];
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, 375, 200) style:UITableViewStylePlain];
     self.tableview.rowHeight = 100.f;
     self.tableview.dataSource = self;

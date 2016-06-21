@@ -34,7 +34,10 @@
     communityItem.image = [UIImage imageNamed:@"community"];
     userItem.image = [UIImage imageNamed:@"user"];
     
-    
+    //设置navigationBar
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navBar"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {

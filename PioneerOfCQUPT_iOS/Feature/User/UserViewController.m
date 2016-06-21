@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, MeTableCellType) {
     MeTableCellTypeSpace      = 4
 };
 
-@interface UserViewController ()<UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate>
+@interface UserViewController ()<UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *dataArray;//保存枚举值
@@ -136,14 +136,20 @@ typedef NS_ENUM(NSUInteger, MeTableCellType) {
     return cell;
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+// Get the new view controller using [segue destinationViewController].
+// Pass the selected object to the new view controller.
+    if ([segue.identifier  isEqual: @"testPopover"]) {
+        segue.destinationViewController.popoverPresentationController.delegate = self;
+    }
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    return UIModalPresentationNone;
+}
 
 @end

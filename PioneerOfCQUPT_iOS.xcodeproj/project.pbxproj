@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EEE4139FC0435AA0F2580B2 /* libPods-PioneerOfCQUPT_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C800FAFD3E656C0BC00B315 /* libPods-PioneerOfCQUPT_iOS.a */; };
+		E2588CDB1D1954DD007BE43F /* HomePageWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2588CDA1D1954DD007BE43F /* HomePageWebViewController.m */; };
 		E26AD35B1D12AB9A0035CB4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AD35A1D12AB9A0035CB4A /* main.m */; };
 		E26AD35E1D12AB9A0035CB4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AD35D1D12AB9A0035CB4A /* AppDelegate.m */; };
 		E26AD3641D12AB9A0035CB4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26AD3621D12AB9A0035CB4A /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 		754660D0DA4AF95502B7411A /* Pods-PioneerOfCQUPT_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PioneerOfCQUPT_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PioneerOfCQUPT_iOS/Pods-PioneerOfCQUPT_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9C800FAFD3E656C0BC00B315 /* libPods-PioneerOfCQUPT_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PioneerOfCQUPT_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F813794F17E6DC19543E01 /* Pods-PioneerOfCQUPT_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PioneerOfCQUPT_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PioneerOfCQUPT_iOS/Pods-PioneerOfCQUPT_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E2588CD91D1954DD007BE43F /* HomePageWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageWebViewController.h; sourceTree = "<group>"; };
+		E2588CDA1D1954DD007BE43F /* HomePageWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageWebViewController.m; sourceTree = "<group>"; };
 		E26AD3561D12AB9A0035CB4A /* PioneerOfCQUPT_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PioneerOfCQUPT_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26AD35A1D12AB9A0035CB4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E26AD35C1D12AB9A0035CB4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 			children = (
 				E26AD3A41D1305A70035CB4A /* HomePageViewController.h */,
 				E26AD3A51D1305A70035CB4A /* HomePageViewController.m */,
+				E2588CD91D1954DD007BE43F /* HomePageWebViewController.h */,
+				E2588CDA1D1954DD007BE43F /* HomePageWebViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				F245D2DD1D17C4310073C6E3 /* LearningMaterialsCell.m in Sources */,
 				F280FF691D1847830001D637 /* DetailViewController.m in Sources */,
 				E26AD3AE1D1306BB0035CB4A /* NewsViewController.m in Sources */,
+				E2588CDB1D1954DD007BE43F /* HomePageWebViewController.m in Sources */,
 				E26AD35E1D12AB9A0035CB4A /* AppDelegate.m in Sources */,
 				E26AD35B1D12AB9A0035CB4A /* main.m in Sources */,
 			);

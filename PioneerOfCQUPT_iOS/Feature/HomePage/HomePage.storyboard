@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sbR-uz-J17" kind="relationship" relationship="rootViewController" id="Ud7-ob-TVi"/>
+                        <segue destination="sbR-uz-J17" kind="relationship" relationship="rootViewController" id="Eq5-IS-6N7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDG-pC-CsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,56 +34,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqf-Th-aDz">
-                                <rect key="frame" x="20" y="285" width="135" height="170"/>
-                                <color key="backgroundColor" red="0.7803921568627451" green="0.0" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="党章党规">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yto-Ii-ijQ">
-                                <rect key="frame" x="163" y="285" width="192" height="85"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="系列讲话">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBa-4Y-CxP">
-                                <rect key="frame" x="20" y="533" width="165" height="62"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <state key="normal" title="先进典型">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9x-HC-YsY">
-                                <rect key="frame" x="20" y="463" width="335" height="62"/>
-                                <color key="backgroundColor" red="0.76229876451732415" green="0.7803921568627451" blue="0.7575245706338809" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="网络活动">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-ju-abN">
-                                <rect key="frame" x="193" y="533" width="162" height="62"/>
-                                <color key="backgroundColor" red="0.83137254901960789" green="0.0" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="经典影像">
-                                    <color key="titleColor" red="0.9692982751" green="0.99056692120000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="4Jz-gY-aVJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="roundImage" translatesAutoresizingMaskIntoConstraints="NO" id="4Jz-gY-aVJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="240"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="utd-zb-AS0">
-                                <rect key="frame" x="168" y="235" width="39" height="37"/>
+                                <rect key="frame" x="168" y="267" width="39" height="37"/>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29d-eC-Bad">
-                                <rect key="frame" x="163" y="378" width="192" height="77"/>
-                                <color key="backgroundColor" red="0.92909564389999999" green="0.92909564389999999" blue="0.92909564389999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="合格党员">
-                                    <color key="titleColor" red="0.833688447" green="0.065319532880000003" blue="0.1030162588" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7Y-wg-BJm">
+                                <rect key="frame" x="-5" y="312" width="128" height="122.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-39" minY="49" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="40" minY="-15" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="学党章党规" image="communistParty">
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="highlightedButton"/>
+                                <connections>
+                                    <segue destination="mhh-C5-0aM" kind="show" identifier="1" id="D7j-j0-T9Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIS-zq-R6h">
+                                <rect key="frame" x="0.0" y="438" width="123" height="123"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-39" minY="49" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="40" minY="-15" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="网络活动" image="networkActivity">
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="highlightedButton"/>
+                                <connections>
+                                    <segue destination="mhh-C5-0aM" kind="show" identifier="4" id="LuJ-Ji-Wsq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idj-RU-w9g">
+                                <rect key="frame" x="126" y="437.5" width="123" height="123"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-39" minY="49" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="40" minY="-15" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="先进典范" image="model">
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="highlightedButton"/>
+                                <connections>
+                                    <segue destination="mhh-C5-0aM" kind="show" identifier="5" id="OSe-Dm-idx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCZ-Rr-00o">
+                                <rect key="frame" x="252" y="438" width="123" height="123"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-39" minY="49" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="40" minY="-15" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="经典影像" image="film">
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="highlightedButton"/>
+                                <connections>
+                                    <segue destination="mhh-C5-0aM" kind="show" identifier="6" id="tvr-2x-srf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcZ-An-bxU">
+                                <rect key="frame" x="252" y="312" width="123" height="123"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-39" minY="49" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="40" minY="-15" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="做合格党员" image="partyMember">
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="highlightedButton"/>
+                                <connections>
+                                    <segue destination="mhh-C5-0aM" kind="show" identifier="3" id="84X-Mu-B4c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh6-VX-w4M">
+                                <rect key="frame" x="126" y="313" width="123" height="122"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-39" minY="49" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="40" minY="-15" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="学系列讲话" image="speech">
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="highlightedButton"/>
+                                <connections>
+                                    <segue destination="mhh-C5-0aM" kind="show" identifier="2" id="d5K-lt-WFt"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="YLz-js-G6a"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -92,8 +134,37 @@
             </objects>
             <point key="canvasLocation" x="954.5" y="462.5"/>
         </scene>
+        <!--Home Page Web View Controller-->
+        <scene sceneID="Voq-1h-DgX">
+            <objects>
+                <viewController id="mhh-C5-0aM" customClass="HomePageWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4o6-at-DMi"/>
+                        <viewControllerLayoutGuide type="bottom" id="4wr-ky-luW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xst-I7-Fw5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b28-VP-yTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1426.5" y="462.5"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="banner" width="740" height="316"/>
+        <image name="communistParty" width="40" height="40"/>
+        <image name="film" width="40" height="39"/>
+        <image name="highlightedButton" width="125" height="125"/>
+        <image name="model" width="40" height="40"/>
+        <image name="networkActivity" width="40" height="40"/>
+        <image name="partyMember" width="40" height="40"/>
+        <image name="roundImage" width="250" height="166"/>
+        <image name="speech" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tvr-2x-srf"/>
+    </inferredMetricsTieBreakers>
 </document>
