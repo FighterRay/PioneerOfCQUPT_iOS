@@ -12,7 +12,7 @@
 #define listURL @"http://202.202.43.42/lxyz/index.php?m=Home&c=index&a=mobilearticlelist"
 #define articleURL @"http://202.202.43.42/lxyz/index.php?m=Home&c=Article&a=mobilearticle"
 @interface CommunityViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *data;
 @property NSDictionary *dict;
 @property NSDictionary *detailDict;
@@ -25,11 +25,10 @@
     [super viewDidLoad];
     [self getData];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"banner"] forBarMetrics:UIBarMetricsDefault];
-    self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, 375, 200) style:UITableViewStylePlain];
-    self.tableview.rowHeight = 100.f;
-    self.tableview.dataSource = self;
-    self.tableview.delegate = self;
-    [self.view addSubview:self.tableview];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+//    [self.view addSubview:self.tableview];
     // Do any additional setup after loading the view.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -39,14 +38,19 @@
     return 1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LearningMaterialsCell *cell = (LearningMaterialsCell *)[[[NSBundle mainBundle]loadNibNamed:@"LearningMaterialsCell" owner:self options:nil]lastObject];
+    static NSString *cellIdentifier = @"learningCell";
+     LearningMaterialsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(!cell) {
+        cell = [[ LearningMaterialsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
     cell.title.text = [self.data[indexPath.row] objectForKey:@"title"];
     cell.content.text = [self.data[indexPath.row] objectForKey:@"content"];
+    cell.time.text = [self.data[indexPath.row] objectForKey:@"time"];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self getData1];
+    [self getData1:[self.data[indexPath.row] objectForKey:@"id"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,21 +72,23 @@
                     self.data = [self.dict objectForKey:@"data"];
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                   [self.tableview reloadData];
+                   [self.tableView reloadData];
                 });
             }];
             [task resume];
         });
     }
 }
--(void) getData1{
+-(void) getData1:(NSString *)number{
+    DetailViewController *vc = [[UIStoryboard storyboardWithName:@"Community" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"DetailViewController"];
     if (self.detailData==nil) {
         dispatch_queue_t q2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         NSURL *URL = [NSURL URLWithString:articleURL];
         dispatch_async(q2, ^{
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
             request.HTTPMethod = @"POST";
-            request.HTTPBody = [@"id=20" dataUsingEncoding:NSUTF8StringEncoding];
+            NSString *string = [NSString stringWithFormat:@"id=%@",number];
+            request.HTTPBody = [string dataUsingEncoding:NSUTF8StringEncoding];
             NSURLSession *session = [NSURLSession sharedSession];
             NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if (error == nil) {
@@ -90,9 +96,11 @@
                     self.detailData = [self.detailDict objectForKey:@"data"];
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    DetailViewController *vc = [[DetailViewController alloc]init];
                     vc.detailTitle = [self.detailData objectForKey:@"title"];
                     vc.detailContent = [self.detailData objectForKey:@"content"];
+                    vc.detailTime = [self.detailData objectForKey:@"time"];
+                    vc.detailFrom = [self.detailData objectForKey:@"from"];
+                    vc.detailAuthor = [self.detailData objectForKey:@"author"];
                     [self.navigationController pushViewController:vc animated:YES];
                 });
             }];
@@ -100,9 +108,11 @@
         });
     }
     else{
-        DetailViewController *vc = [[DetailViewController alloc]init];
         vc.detailTitle = [self.detailData objectForKey:@"title"];
         vc.detailContent = [self.detailData objectForKey:@"content"];
+        vc.detailTime = [self.detailData objectForKey:@"time"];
+        vc.detailFrom = [self.detailData objectForKey:@"from"];
+        vc.detailAuthor = [self.detailData objectForKey:@"author"];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
