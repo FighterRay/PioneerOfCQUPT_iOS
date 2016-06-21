@@ -27,7 +27,6 @@
 		E26AD3CB1D1321520035CB4A /* AvatarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AD3C81D1321520035CB4A /* AvatarTableViewCell.m */; };
 		E26AD3CC1D1321520035CB4A /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E26AD3CA1D1321520035CB4A /* TitleTableViewCell.m */; };
 		F245D2DD1D17C4310073C6E3 /* LearningMaterialsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F245D2DB1D17C4310073C6E3 /* LearningMaterialsCell.m */; };
-		F245D2DE1D17C4310073C6E3 /* LearningMaterialsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F245D2DC1D17C4310073C6E3 /* LearningMaterialsCell.xib */; };
 		F280FF691D1847830001D637 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F280FF681D1847830001D637 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 		E26AD3CA1D1321520035CB4A /* TitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleTableViewCell.m; sourceTree = "<group>"; };
 		F245D2DA1D17C4310073C6E3 /* LearningMaterialsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearningMaterialsCell.h; sourceTree = "<group>"; };
 		F245D2DB1D17C4310073C6E3 /* LearningMaterialsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearningMaterialsCell.m; sourceTree = "<group>"; };
-		F245D2DC1D17C4310073C6E3 /* LearningMaterialsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LearningMaterialsCell.xib; sourceTree = "<group>"; };
 		F280FF671D1847830001D637 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F280FF681D1847830001D637 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,7 +348,6 @@
 				E26AD3B21D1307140035CB4A /* Community.storyboard */,
 				F245D2DA1D17C4310073C6E3 /* LearningMaterialsCell.h */,
 				F245D2DB1D17C4310073C6E3 /* LearningMaterialsCell.m */,
-				F245D2DC1D17C4310073C6E3 /* LearningMaterialsCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -503,7 +500,6 @@
 				E26AD39F1D1304910035CB4A /* HomePage.storyboard in Resources */,
 				E26AD3691D12AB9A0035CB4A /* LaunchScreen.storyboard in Resources */,
 				E26AD3AB1D1306680035CB4A /* News.storyboard in Resources */,
-				F245D2DE1D17C4310073C6E3 /* LearningMaterialsCell.xib in Resources */,
 				E26AD3C61D1313C90035CB4A /* Assets.xcassets in Resources */,
 				E26AD3BD1D1307F70035CB4A /* User.storyboard in Resources */,
 				E26AD3641D12AB9A0035CB4A /* Main.storyboard in Resources */,
