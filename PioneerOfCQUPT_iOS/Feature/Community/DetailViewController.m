@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController ()<UIWebViewDelegate>
 
 @end
 
@@ -21,7 +21,7 @@
     self.timeLabel.text = [NSString stringWithFormat:@"发布时间:%@",self.detailTime];
     self.fromLabel.text = [NSString stringWithFormat:@"来源:%@",self.detailFrom];
     NSString *html_str = [NSString stringWithString:self.detailContent];
-    html_str = [self getZZwithString:html_str];
+    self.contentWebView.delegate = self;
     [self.contentWebView loadHTMLString:html_str baseURL:nil];
     self.titleLabel.text = self.detailTitle;
     // Do any additional setup after loading the view.
@@ -31,11 +31,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(NSString *)getZZwithString:(NSString *)string{
-    NSRegularExpression *regularExpretion=[NSRegularExpression regularExpressionWithPattern:@"<[^>]*>|\n" options:0                                                                                      error:nil];
-    string=[regularExpretion stringByReplacingMatchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length) withTemplate:@""];
-    return string;
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *js = @"function imgAutoFit() { \
+    var imgs = document.getElementsByTagName('img'); \
+    for (var i = 0; i < imgs.length; ++i) {\
+    var img = imgs[i];   \
+    img.style.maxWidth = %f;   \
+    } \
+    }";
+    js = [NSString stringWithFormat:js, [UIScreen mainScreen].bounds.size.width - 20];
+    
+    [webView stringByEvaluatingJavaScriptFromString:js];
+    [webView stringByEvaluatingJavaScriptFromString:@"imgAutoFit()"];
 }
+
 /*
  #pragma mark - Navigation
  
