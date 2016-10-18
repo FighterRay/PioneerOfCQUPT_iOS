@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController ()<UIWebViewDelegate>
 
 @end
 
@@ -17,20 +17,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UILabel *lb1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 60, 375, 100)];
-    UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 180, 375, 300)];
+    self.authorLabel.text = [NSString stringWithFormat:@"作者:%@",self.detailAuthor];
+    self.timeLabel.text = [NSString stringWithFormat:@"发布时间:%@",self.detailTime];
+    self.fromLabel.text = [NSString stringWithFormat:@"来源:%@",self.detailFrom];
     NSString *html_str = [NSString stringWithString:self.detailContent];
-    [webView loadHTMLString:html_str baseURL:nil];
-    lb1.text = self.detailTitle;
-    lb1.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:lb1];
-    [self.view addSubview:webView];
+    self.contentWebView.delegate = self;
+    [self.contentWebView loadHTMLString:html_str baseURL:nil];
+    self.titleLabel.text = self.detailTitle;
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *js = @"function imgAutoFit() { \
+    var imgs = document.getElementsByTagName('img'); \
+    for (var i = 0; i < imgs.length; ++i) {\
+    var img = imgs[i];   \
+    img.style.maxWidth = %f;   \
+    } \
+    }";
+    js = [NSString stringWithFormat:js, [UIScreen mainScreen].bounds.size.width - 20];
+    
+    [webView stringByEvaluatingJavaScriptFromString:js];
+    [webView stringByEvaluatingJavaScriptFromString:@"imgAutoFit()"];
 }
 
 /*
